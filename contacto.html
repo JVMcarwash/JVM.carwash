@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - JVM</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    .telefono-box {
+      background-color: #f0f0f0;
+      border: 2px solid #ccc;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: 40px auto;
+      font-size: 1.2em;
+    }
+
+    .telefono-numero {
+      font-weight: bold;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .copiar-btn {
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .copiar-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="jvmcarwash.png" alt="AutoSpa banner">
+    <div class="logo-container">
+      <h1>JVM</h1>
+      <p>Lavadero de Autos Profesional y Rápido</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="ubicacion.html">Ubicación</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+  <div class="container">
+    <section class="section">
+      <h2>📞 Contáctanos</h2>
+      <div class="telefono-box">
+        <span id="telefono" class="telefono-numero">2342456552</span>
+        <button class="copiar-btn" onclick="copiarTelefono()">Copiar número</button>
+      </div>
+
+      <div class="telefono-box">
+        <span class="telefono-numero">📷 Síguenos en Instagram</span>
+        <a href="https://www.instagram.com/jvm_carwash" target="_blank">
+          <button class="copiar-btn">Ir a Instagram</button>
+        </a>
+      </div>
+
+      <a href="index.html">⬅️ Volver al inicio</a>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 JVM Carwash. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function copiarTelefono() {
+      const telefono = document.getElementById("telefono").textContent;
+      navigator.clipboard.writeText(telefono)
+        .then(() => alert("Número copiado al portapapeles"))
+        .catch(() => alert("Error al copiar el número"));
+    }
+  </script>
+
+</body>
+</html>

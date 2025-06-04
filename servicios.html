@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios - JVM</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    .servicio-item {
+      background-color: #f0f0f0;
+      margin: 15px 0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      animation: fadeInUp 1s ease;
+      position: relative;
+    }
+
+    .servicio-item:hover {
+      transform: translateY(-5px);
+      background-color: #DDD1B1;
+      color: #1D433A;
+    }
+
+    .mas-info {
+      margin-top: 10px;
+      background-color: #1D433A;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+
+    .detalle-servicio {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.3s ease;
+      background-color: #fff;
+      border-radius: 6px;
+      margin-top: 10px;
+      padding: 0 10px;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .detalle-servicio.activo {
+      max-height: 200px;
+      padding: 10px;
+    }
+  </style>
+  <script>
+    function toggleDetalle(id, boton) {
+      const detalle = document.getElementById(id);
+      const activo = detalle.classList.toggle("activo");
+      boton.textContent = activo ? "Ocultar info" : "Más info";
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <img src="jvmcarwash.png" alt="AutoSpa banner" style="width: 100%; max-height: 300px; object-fit: cover;">
+    <div class="logo-container">
+      <h1>JVM</h1>
+      <p>Lavadero de Autos Profesional y Rápido</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="ubicacion.html">Ubicación</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+  <div class="container">
+    <section class="section">
+      <h2>🚗 Nuestros Servicios</h2>
+
+      <div class="servicio-item">
+        ✨ Lavado Auto - $12.000
+        <button class="mas-info" onclick="toggleDetalle('detalle1', this)">Más info</button>
+        <div id="detalle1" class="detalle-servicio">
+          Incluye lavado exterior, limpieza de llantas y limpieza interior.
+        </div>
+      </div>
+
+      <div class="servicio-item">
+        🛎️ Lavado Camioneta/ SUV - $15.000
+        <button class="mas-info" onclick="toggleDetalle('detalle2', this)">Más info</button>
+        <div id="detalle2" class="detalle-servicio">
+          Incluye lavado exterior, limpieza de llantas y chasis, mas limpieza interior.
+        </div>
+      </div>
+
+      <div class="servicio-item">
+        🧼 Lavado Detallado - 
+        <button class="mas-info" onclick="toggleDetalle('detalle3', this)">Más info</button>
+        <div id="detalle3" class="detalle-servicio">
+          Proximamente...
+        </div>
+      </div>
+
+      <a href="index.html">⬅️ Volver al inicio</a>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 JVM Carwash. Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>
